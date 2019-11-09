@@ -40,4 +40,3 @@ for video in config.videos:
         os.makedirs(video['path'])
 
     urllib.request.urlretrieve(video_url, video['path'] + video['filename'] + '.mp4')
-
