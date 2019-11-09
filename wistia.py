@@ -1,9 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from dotenv import load_dotenv
 import os
-from os.path import join, dirname
 import urllib.request
 import time
 import config
@@ -31,9 +28,9 @@ for video in config.videos:
 
     driver.get('https://getvideo.at/en/')
     
-    driver.find_element(By.ID, 'search-text').send_keys('https://fast.wistia.net/embed/iframe/' + id)
+    driver.find_element_by_id('search-text').send_keys('https://fast.wistia.net/embed/iframe/' + id)
 
-    driver.find_element(By.ID, 'search-button').click()
+    driver.find_element_by_id('search-button').click()
 
     time.sleep(3)
     
@@ -41,7 +38,7 @@ for video in config.videos:
         test_xpath = "//*[contains(text(),'" + quality + "')]/parent::*"
         
         if check_exists_by_xpath(test_xpath):
-            video_url = driver.find_element(By.XPATH, test_xpath).get_attribute("href")
+            video_url = driver.find_element_by_xpath(test_xpath).get_attribute("href")
             break
     
     if video_url == None:
