@@ -13,3 +13,6 @@ Make sure to download the version that corresponds to your installed Chrome brow
 
 ### Editing config.py
 Explainations are within the file.
+
+### Run the program
+`$ python wistia.py`

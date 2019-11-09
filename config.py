@@ -25,6 +25,8 @@ videos = [
 
 # 720 is the desired quality, and if it doesn't exist then a subsequent quality 
 # will be chosen. Rearrange as desired.
+#
+# Available qualities: 1080, 720, 540, 360, 224
 qualities = [
     '720',
     '540',
